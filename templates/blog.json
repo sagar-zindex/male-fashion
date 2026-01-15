@@ -9,23 +9,12 @@
  */
 {
   "sections": {
-    "blog_banner_xeFYiF": {
-      "type": "blog-banner",
-      "name": "Blog Banner Section",
-      "settings": {
-        "banner_image": "shopify://shop_images/breadcrumb-bg.jpg",
-        "title": "Our Blog"
-      }
-    },
     "main": {
       "type": "blog",
-      "settings": {
-        "articles_per_page": 6
-      }
+      "settings": {}
     }
   },
   "order": [
-    "blog_banner_xeFYiF",
     "main"
   ]
 }

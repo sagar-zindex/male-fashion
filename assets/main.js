@@ -25,9 +25,26 @@
             $('.filter__controls li').removeClass('active');
             $(this).addClass('active');
         });
+
         if ($('.product__filter').length > 0) {
+
             var containerEl = document.querySelector('.product__filter');
-            var mixer = mixitup(containerEl);
+
+            // ✅ Get active tab filter on load
+            var firstFilter = $('.filter__controls li.active').data('filter');
+
+            // ✅ Init MixItUp with default filter
+            var mixer = mixitup(containerEl, {
+                selectors: {
+                    target: '.mix'
+                },
+                load: {
+                    filter: firstFilter   // 👈 KEY LINE
+                },
+                animation: {
+                    duration: 300
+                }
+            });
         }
     });
 
@@ -51,8 +68,8 @@
     });
 
     /*------------------
-		Navigation
-	--------------------*/
+        Navigation
+    --------------------*/
     $(".mobile-menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
@@ -103,16 +120,16 @@
     $("select").niceSelect();
 
     /*-------------------
-		Radio Btn
-	--------------------- */
+        Radio Btn
+    --------------------- */
     $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").on('click', function () {
         $(".product__color__select label, .shop__sidebar__size label, .product__details__option__size label").removeClass('active');
         $(this).addClass('active');
     });
 
     /*-------------------
-		Scroll
-	--------------------- */
+        Scroll
+    --------------------- */
     $(".nice-scroll").niceScroll({
         cursorcolor: "#0d0d0d",
         cursorwidth: "5px",
@@ -131,7 +148,7 @@
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
 
-    if(mm == 12) {
+    if (mm == 12) {
         mm = '01';
         yyyy = yyyy + 1;
     } else {
@@ -151,15 +168,15 @@
     });
 
     /*------------------
-		Magnific
-	--------------------*/
+        Magnific
+    --------------------*/
     $('.video-popup').magnificPopup({
         type: 'iframe'
     });
 
     /*-------------------
-		Quantity change
-	--------------------- */
+        Quantity change
+    --------------------- */
     var proQty = $('.pro-qty');
     proQty.prepend('<span class="fa fa-angle-up dec qtybtn"></span>');
     proQty.append('<span class="fa fa-angle-down inc qtybtn"></span>');

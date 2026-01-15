@@ -91,10 +91,46 @@
       ],
       "name": "Home Collection",
       "settings": {}
+    },
+    "home_products_7AFcz7": {
+      "type": "home-products",
+      "blocks": {
+        "collection_tab_PH8QYF": {
+          "type": "collection_tab",
+          "settings": {
+            "tab_title": "Best Sellers",
+            "collection": "best-sellers"
+          }
+        },
+        "collection_tab_CXpUtk": {
+          "type": "collection_tab",
+          "settings": {
+            "tab_title": " New Arrivals",
+            "collection": "new-arrivals"
+          }
+        },
+        "collection_tab_t8NPpj": {
+          "type": "collection_tab",
+          "settings": {
+            "tab_title": "Hot Sales",
+            "collection": "hot-sales"
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_PH8QYF",
+        "collection_tab_CXpUtk",
+        "collection_tab_t8NPpj"
+      ],
+      "name": "Home Product",
+      "settings": {
+        "products_limit": 8
+      }
     }
   },
   "order": [
     "home_hero_teC4QM",
-    "home_collection_GHNaVK"
+    "home_collection_GHNaVK",
+    "home_products_7AFcz7"
   ]
 }
