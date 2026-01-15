@@ -28,9 +28,9 @@
       <img src="{{'heart.png' | asset_url }}" alt="Heart">
     </a>
     <a href="{{ routes.cart_url }}">
-      <img src="{{'cart.png' | asset_url }}" alt="Cart"> <span class="cart-count">{{ cart.item_count }}</span>
+      <img src="{{'cart.png' | asset_url }}" alt="Cart"> <span>{{ cart.item_count }}</span>
     </a>
-    <div class="price cart-total-price">{{ cart.total_price | money }}</div>
+    <div class="price">{{ cart.total_price | money }}</div>
   </div>
   <div id="mobile-menu-wrap"></div>
   {% if section.settings.free_shipping_text %}
@@ -123,9 +123,9 @@
           </a>
           <a href="{{ routes.cart_url }}">
             <img src="{{'cart.png' | asset_url }}" alt="">
-            <span class="cart-count">{{ cart.item_count }}</span>
+            <span>{{ cart.item_count }}</span>
           </a>
-          <div class="price cart-total-price">{{ cart.total_price | money }}</div>
+          <div class="price">{{ cart.total_price | money }}</div>
         </div>
       </div>
     </div>

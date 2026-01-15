@@ -1,0 +1,37 @@
+<!-- Breadcrumb Section Begin -->
+{% if section.settings.banner_image %}
+  <section class="breadcrumb-blog set-bg" data-setbg="{{ section.settings.banner_image | image_url }}">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>{{ section.settings.title }}</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+<!-- Breadcrumb Section End -->
+
+{% schema %}
+{
+  "name": "Blog Banner Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Blog Banner Section"
+    }
+  ]
+}
+{% endschema %}
