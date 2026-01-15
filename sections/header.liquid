@@ -1,0 +1,169 @@
+<!-- Page Preloder -->
+<div id="preloder">
+  <div class="loader"></div>
+</div>
+
+<!-- Offcanvas Menu Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="offcanvas-menu-wrapper">
+  <div class="offcanvas__option">
+    <div class="offcanvas__links">
+      {% if customer %}
+        <a href="{{routes.account_url}}">My Account</a>
+        <a href="{{ routes.account_logout_url }}">Logout</a>
+      {% else %}
+        <a href="{{ routes.account_login_url }}">Login</a>
+        <a href="{{ routes.account_register_url }}">Register</a>
+      {% endif %}
+      {% if section.settings.faqs_page %}
+        <a href="{{ section.settings.faqs_page | page_url }}">{{ section.settings.faqs_page.title }}</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="offcanvas__nav__option">
+    <a href="javascript:void(0)" class="search-switch">
+      <img src="{{'search.png' | asset_url }}" alt="Search">
+    </a>
+    <a href="{{ apps.wishlists.url }}">
+      <img src="{{'heart.png' | asset_url }}" alt="Heart">
+    </a>
+    <a href="{{ routes.cart_url }}">
+      <img src="{{'cart.png' | asset_url }}" alt="Cart"> <span class="cart-count">{{ cart.item_count }}</span>
+    </a>
+    <div class="price cart-total-price">{{ cart.total_price | money }}</div>
+  </div>
+  <div id="mobile-menu-wrap"></div>
+  {% if section.settings.free_shipping_text %}
+    <div class="offcanvas__text">
+      <p>{{ section.settings.free_shipping_text }}</p>
+    </div>
+  {% endif %}
+</div>
+<!-- Offcanvas Menu End -->
+
+<!-- Header Section Begin -->
+<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <div class="row">
+        {% if section.settings.free_shipping_text %}
+          <div class="col-lg-6 col-md-7">
+            <div class="header__top__left">
+              <p>{{ section.settings.free_shipping_text }}</p>
+            </div>
+          </div>
+        {% endif %}
+        <div class="col-lg-6 col-md-5">
+          <div class="header__top__right">
+            <div class="header__top__links">
+              {% if customer %}
+                <a href="{{routes.account_url}}">My Account</a>
+                <a href="{{ routes.account_logout_url }}">Logout</a>
+              {% else %}
+                <a href="{{ routes.account_login_url }}">Login</a>
+                <a href="{{ routes.account_register_url }}">Register</a>
+              {% endif %}
+              {% if section.settings.faqs_page %}
+                <a href="{{ section.settings.faqs_page | page_url }}">{{ section.settings.faqs_page.title }}</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      {% if section.settings.logo_image %}
+        <div class="col-lg-3 col-md-3">
+          <div class="header__logo">
+            <a href="{{routes.root_url}}">
+              <img src="{{ section.settings.logo_image | img_url: 'original' }}" alt="male fashion logo">
+            </a>
+          </div>
+        </div>
+      {% else %}
+        <div class="col-lg-3 col-md-3">
+          <div class="header__logo">
+            <a href="{{routes.root_url}}">
+              <img src="{{ 'logo.png' | asset_url }}" alt="male fashion logo">
+            </a>
+          </div>
+        </div>
+      {% endif %}
+      <div class="col-lg-6 col-md-6">
+        <nav class="header__menu mobile-menu">
+          <ul>
+            {% for link in section.settings.main_menu.links %}
+              <li class="{% if link.current %}active{% endif %}">
+                <a href="{{ link.url }}">{{ link.title }}</a>
+                {% if link.links.size > 0 %}
+                  <ul class="dropdown">
+                    {% for childlink in link.links %}
+                      <li>
+                        <a href="{{ childlink.url }}">
+                          {{ childlink.title }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-3 col-md-3">
+        <div class="header__nav__option">
+          <a href="#" class="search-switch">
+            <img src="{{'search.png' | asset_url }}" alt="">
+          </a>
+          <a href="{{ apps.wishlists.url }}">
+            <img src="{{'heart.png' | asset_url }}" alt="">
+          </a>
+          <a href="{{ routes.cart_url }}">
+            <img src="{{'cart.png' | asset_url }}" alt="">
+            <span class="cart-count">{{ cart.item_count }}</span>
+          </a>
+          <div class="price cart-total-price">{{ cart.total_price | money }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="canvas__open"><i class="fa fa-bars"></i></div>
+  </div>
+</header>
+<!-- Header Section End -->
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "free_shipping_text",
+      "label": "Free shipping text",
+      "default": "Free shipping, 30-day return or refund guarantee."
+    },
+    {
+      "type": "page",
+      "id": "faqs_page",
+      "label": "FAQs Page"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    },
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main Menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}

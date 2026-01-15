@@ -1,0 +1,140 @@
+<!-- Hero Section Begin -->
+{% assign has_banner = false %}
+{% for block in section.blocks %}
+  {% if block.type == 'banner_item' and block.settings.banner_image != blank %}
+    {% assign has_banner = true %}
+  {% endif %}
+{% endfor %}
+{% if has_banner %}
+  {% assign facebook_url = section.settings.facebook_url %}
+  {% assign twitter_url = section.settings.twitter_url %}
+  {% assign pinterest_url = section.settings.pinterest_url %}
+  {% assign instagram_url = section.settings.instagram_url %}
+
+  <section class="hero">
+    <div class="hero__slider owl-carousel">
+      {% for block in section.blocks %}
+        {% if block.type == 'banner_item' %}
+         <div
+            class="hero__items set-bg"
+            data-setbg="{{ block.settings.banner_image | image_url: width: 2000 }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="container">
+              <div class="row">
+                <div class="col-xl-5 col-lg-7 col-md-8">
+                  <div class="hero__text">
+                    {% if block.settings.sub_title %}
+                      <h6>{{ block.settings.sub_title }}</h6>
+                    {% endif %}
+                    {% if block.settings.main_title %}
+                      <h2>{{ block.settings.main_title }}</h2>
+                    {% endif %}
+                    {% if block.settings.short_description %}
+                      <p>{{ block.settings.short_description }}</p>
+                    {% endif %}
+                    {% if block.settings.cta_url and block.settings.cta_title %}
+                      <a href="{{ block.settings.cta_url }}" class="primary-btn">
+                        {{- block.settings.cta_title }}
+                        <span class="arrow_right"></span
+                      ></a>
+                    {% endif %}
+                    <div class="hero__social">
+                      {% if facebook_url %}
+                        <a href="{{ facebook_url }}"> <i class="fa fa-facebook"></i> </a>
+                      {% endif %}
+                      {% if twitter_url %}
+                        <a href="{{ twitter_url }}"> <i class="fa fa-twitter"></i> </a>
+                      {% endif %}
+                      {% if pinterest_url %}
+                        <a href="{{ pinterest_url }}"><i class="fa fa-pinterest"></i></a>
+                      {% endif %}
+                      {% if instagram_url %}
+                        <a href="{{ instagram_url }}"><i class="fa fa-instagram"></i></a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+<!-- Hero Section End -->
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook Url"
+    },
+    {
+      "type": "url",
+      "id": "twitter_url",
+      "label": "Twitter Url"
+    },
+    {
+      "type": "url",
+      "id": "pinterest_url",
+      "label": "Pinterest Url"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram Url"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Banner Item",
+      "type": "banner_item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "banner_image",
+          "label": "Banner Image"
+        },
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub Title",
+          "default": "Summer Collection"
+        },
+        {
+          "type": "text",
+          "id": "main_title",
+          "label": "Main TItle",
+          "default": "Fall - Winter Collection 2026"
+        },
+        {
+          "type": "textarea",
+          "id": "short_description",
+          "label": "Short Description"
+        },
+        {
+          "type": "text",
+          "id": "cta_title",
+          "label": "CTA Title",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "CTA URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "hero"
+    }
+  ]
+}
+{% endschema %}

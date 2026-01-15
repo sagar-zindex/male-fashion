@@ -1,0 +1,136 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "home_hero_teC4QM": {
+      "type": "home_hero",
+      "blocks": {
+        "banner_item_g78tDJ": {
+          "type": "banner_item",
+          "settings": {
+            "banner_image": "shopify://shop_images/hero-1.jpg",
+            "sub_title": "Summer Collection",
+            "main_title": "Fall - Winter Collection 2026",
+            "short_description": "A specialist label creating luxury essentials. Ethically crafted with an unwavering  commitment to exceptional quality.",
+            "cta_title": "Shop Now",
+            "cta_url": "shopify://collections/all"
+          }
+        },
+        "banner_item_cKGHUN": {
+          "type": "banner_item",
+          "settings": {
+            "banner_image": "shopify://shop_images/hero-2.jpg",
+            "sub_title": "Summer Collection",
+            "main_title": "Fall - Winter Collection 2026",
+            "short_description": "A specialist label creating luxury essentials. Ethically crafted with an unwavering  commitment to exceptional quality.",
+            "cta_title": "Shop Now",
+            "cta_url": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "banner_item_g78tDJ",
+        "banner_item_cKGHUN"
+      ],
+      "name": "hero",
+      "settings": {
+        "facebook_url": "https://www.facebook.com",
+        "twitter_url": "https://www.x.com",
+        "pinterest_url": "https://www.pinterest.com",
+        "instagram_url": "https://www.instagram.com"
+      }
+    },
+    "home_collection_GHNaVK": {
+      "type": "home_collection",
+      "blocks": {
+        "colection_item_k8cAt7": {
+          "type": "colection_item",
+          "settings": {
+            "collection_image": "shopify://shop_images/banner-1.jpg",
+            "title": "Clothing Collection",
+            "cta_link": "shopify://collections/clothing-store",
+            "link_label": "Shop now",
+            "column_class": "col-lg-7 offset-lg-4",
+            "collection_style": ""
+          }
+        },
+        "colection_item_LHARz3": {
+          "type": "colection_item",
+          "settings": {
+            "collection_image": "shopify://shop_images/banner-2.jpg",
+            "title": "Accessories",
+            "cta_link": "shopify://collections/accessories",
+            "link_label": "Shop now",
+            "column_class": "col-lg-5",
+            "collection_style": "banner__item--middle"
+          }
+        },
+        "colection_item_Q8dKwG": {
+          "type": "colection_item",
+          "settings": {
+            "collection_image": "shopify://shop_images/banner-3.jpg",
+            "title": "Shoes Spring 2030",
+            "cta_link": "shopify://collections/trending-shoes",
+            "link_label": "Shop now",
+            "column_class": "col-lg-7",
+            "collection_style": "banner__item--last"
+          }
+        }
+      },
+      "block_order": [
+        "colection_item_k8cAt7",
+        "colection_item_LHARz3",
+        "colection_item_Q8dKwG"
+      ],
+      "name": "Home Collection",
+      "settings": {}
+    },
+    "home_products_7AFcz7": {
+      "type": "home-products",
+      "blocks": {
+        "collection_tab_PH8QYF": {
+          "type": "collection_tab",
+          "settings": {
+            "tab_title": "Best Sellers",
+            "collection": "best-sellers"
+          }
+        },
+        "collection_tab_CXpUtk": {
+          "type": "collection_tab",
+          "settings": {
+            "tab_title": " New Arrivals",
+            "collection": "new-arrivals"
+          }
+        },
+        "collection_tab_t8NPpj": {
+          "type": "collection_tab",
+          "settings": {
+            "tab_title": "Hot Sales",
+            "collection": "hot-sales"
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_PH8QYF",
+        "collection_tab_CXpUtk",
+        "collection_tab_t8NPpj"
+      ],
+      "name": "Home Product",
+      "settings": {
+        "products_limit": 8
+      }
+    }
+  },
+  "order": [
+    "home_hero_teC4QM",
+    "home_collection_GHNaVK",
+    "home_products_7AFcz7"
+  ]
+}

@@ -1,0 +1,102 @@
+<!-- Banner Section Begin -->
+{% if section.blocks.size > 0 %}
+  <section class="banner spad">
+    <div class="container">
+      <div class="row">
+        {% for block in section.blocks %}
+          {% if block.type == 'colection_item' %}
+            {% assign collection_image = block.settings.collection_image %}
+            {% assign title = block.settings.title %}
+            {% assign cta_link = block.settings.cta_link %}
+            {% assign link_label = block.settings.link_label %}
+            {% if collection_image != blank or title != blank or cta_link != blank %}
+              <div class="{{ block.settings.column_class }}">
+                <div class="banner__item {{ block.settings.collection_style }}">
+                  {% if collection_image != blank %}
+                    <div class="banner__item__pic">
+                      <img src="{{ collection_image | image_url }}" alt="">
+                    </div>
+                  {% endif %}
+                  {% if title != blank or cta_link != blank %}
+                    <div class="banner__item__text">
+                      {% if title != blank %}
+                        <h2>{{ title }}</h2>
+                      {% endif %}
+                      {% if cta_link != blank and link_label != blank %}
+                        <a href="{{ cta_link }}">{{ link_label }}</a>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+<!-- Banner Section End -->
+{% schema %}
+{
+  "name": "Home Collection",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "colection_item",
+      "name": "Collection Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "collection_image",
+          "label": "Collection Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Clothing Collection"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link Label",
+          "default": "Shop now"
+        },
+        {
+          "type": "select",
+          "id": "column_class",
+          "label": "Column Width",
+          "default": "col-lg-7",
+          "options": [
+            { "value": "col-lg-7 offset-lg-4", "label": "Large Right (7 + offset)" },
+            { "value": "col-lg-5", "label": "Medium (5)" },
+            { "value": "col-lg-7", "label": "Large (7)" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "collection_style",
+          "label": "Collection Style",
+          "default": "",
+          "options": [
+            { "value": "", "label": "Default" },
+            { "value": "banner__item--middle", "label": "Middle" },
+            { "value": "banner__item--last", "label": "Last" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Collection"
+    }
+  ]
+}
+{% endschema %}

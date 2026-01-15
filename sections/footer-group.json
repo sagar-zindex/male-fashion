@@ -1,0 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:general.footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "footer_logo": "shopify://shop_images/footer-logo.png",
+        "footer_text": "The customer is at the heart of our unique business model, which includes design.",
+        "payment_image": "shopify://shop_images/details-payment.png",
+        "Menu_1_Title": "Shopping",
+        "Menu_1": "footer",
+        "Menu_2_Title": "Shopping",
+        "Menu_2": "quick-view",
+        "newsletter_title": "NewLetter",
+        "newsletter_text": "Be the first to know about new arrivals, look books, sales & promos!"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
