@@ -14,3 +14,7 @@ sass/
 ## Release files
 release
 *.zip
+.DS_Store
+.env
+node_modules/
+config/settings_data.json
